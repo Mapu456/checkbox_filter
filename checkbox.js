@@ -7,6 +7,7 @@ var checked = {};
 
 //getChecked() is used to check whether a user has checked a checkbox or
 //radio button by using the element ID
+//proof
 getChecked('categories');
 getChecked('tags');
 getChecked('availability');
