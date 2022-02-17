@@ -1,20 +1,15 @@
 // not exactly vanilla as there is one lodash function
-function myFunction() {
-  alert("Hello! I am an alert box!");
-}
 var allCheckboxes = document.querySelectorAll('input[type=checkbox]');
 console.log(allCheckboxes);
-var allPlayers = Array.from(document.querySelectorAll('.player'));
-console.log("this is the array", allPlayers);
+var allProducts = Array.from(document.querySelectorAll('.products'));
+console.log("this is the array", allProducts);
 var checked = {};
 
 //getChecked() is used to check whether a user has checked a checkbox or
 //radio button by using the element ID
-getChecked('startingReserves');
-getChecked('injured');
-getChecked('position');
-getChecked('nbaTeam');
-getChecked('conference');
+getChecked('categories');
+getChecked('tags');
+getChecked('availability');
 
 //El array no se usa en absoluto pero da acceso al uso del prototipo foreach
 // y call es un prototipo que llama a otras funciones
@@ -35,13 +30,11 @@ function getChecked(name) {
 }
 
 function setVisibility() {
-  allPlayers.map(function (el) {
-    var startingReserves = checked.startingReserves.length ? _.intersection(Array.from(el.classList), checked.startingReserves).length : true;
-    var injured = checked.injured.length ? _.intersection(Array.from(el.classList), checked.injured).length : true;
-    var position = checked.position.length ? _.intersection(Array.from(el.classList), checked.position).length : true;
-    var nbaTeam = checked.nbaTeam.length ? _.intersection(Array.from(el.classList), checked.nbaTeam).length : true;
-    var conference = checked.conference.length ? _.intersection(Array.from(el.classList), checked.conference).length : true;
-    if (startingReserves && injured && position && nbaTeam && conference) {
+  allProducts.map(function (el) {
+    var categories = checked.categories.length ? _.intersection(Array.from(el.classList), checked.categories).length : true;
+    var tags = checked.tags.length ? _.intersection(Array.from(el.classList), checked.tags).length : true;
+    var availability = checked.availability.length ? _.intersection(Array.from(el.classList), checked.availability).length : true;
+    if (categories && tags && availability) {
       el.style.display = 'block';
     } else {
       el.style.display = 'none';
