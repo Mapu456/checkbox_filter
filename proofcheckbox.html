@@ -4,204 +4,294 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="checkbox.css">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="checkbox.css" />
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"
     ></script>
-    <title>Players</title>
+    <title>Search box</title>
   </head>
   <body>
     <header>
-      <h1>Guinea Refresh</h1>
+      <h1 class="main-title">Guinea Refresh</h1>
     </header>
     <div class="container">
-      <aside>
-        <h3>Categories</h3>
-        <div>
-          <div>
+      <container class="filter-search">
+        <div class="letters">
+          <div class="search-container div_hero_search_categorie">
             <input
-              type="checkbox"
-              name="categories"
-              value="frozen"
-              id="frozen"
-            /><label for="frozen">Frozen</label>
+              class="search-input"
+              type="text"
+              name="search-bar"
+              placeholder=" Product search"
+            />
           </div>
-          <div>
-            <input
-              type="checkbox"
-              name="categories"
-              value="fresh"
-              id="fresh"
-            /><label for="fresh">Fresh</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              name="categories"
-              value="dried"
-              id="dried"
-            /><label for="dried">Dried</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              name="categories"
-              value="fish"
-              id="fish"
-            /><label for="fish">Fish</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              name="categories"
-              value="oils"
-              id="oils"
-            /><label for="oils">Oils</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              name="categories"
-              value="drinks"
-              id="drinks"
-            /><label for="drinks">Drinks</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              name="categories"
-              value="spices"
-              id="spices"
-            /><label for="spices">Spices</label>
-          </div>
+          <aside>
+            <h3 class="title-categories">Categories</h3>
+            <div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="categories"
+                  value="frozen"
+                  id="frozen"
+                /><label for="frozen">Frozen</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="categories"
+                  value="fresh"
+                  id="fresh"
+                /><label for="fresh">Fresh</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="categories"
+                  value="dried"
+                  id="dried"
+                /><label for="dried">Dried</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="categories"
+                  value="fish"
+                  id="fish"
+                /><label for="fish">Fish</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="categories"
+                  value="oils"
+                  id="oils"
+                /><label for="oils">Oils</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="categories"
+                  value="drinks"
+                  id="drinks"
+                /><label for="drinks">Drinks</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="categories"
+                  value="spices"
+                  id="spices"
+                /><label for="spices">Spices</label>
+              </div>
+            </div>
+            <h3 class="title-categories">Tags</h3>
+            <div>
+              <div>
+                <input type="checkbox" name="tags" value="new" id="new" /><label
+                  for="new"
+                  >New</label
+                >
+              </div>
+            </div>
+            <div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="tags"
+                  value="on-sale"
+                  id="on-sale"
+                /><label for="on-sale">On sale</label>
+              </div>
+            </div>
+            <div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="tags"
+                  value="best-seller"
+                  id="best-seller"
+                /><label for="best-seller">Best seller</label>
+              </div>
+            </div>
+            <div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="tags"
+                  value="most-love"
+                  id="most-love"
+                /><label for="most-love">Most love</label>
+              </div>
+            </div>
+            <h3 class="title-categories">Availability</h3>
+            <div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="availability"
+                  value="in-stock"
+                  id="in-stock"
+                /><label for="in-stock">In stock</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="availability"
+                  value="almost-out"
+                  id="almost-out"
+                /><label for="almost-out">Almost out</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="availability"
+                  value="out-of-stock"
+                  id="out-of-stock"
+                /><label for="out-of-stock">Out of stock</label>
+              </div>
+            </div>
+          </aside>
         </div>
-        <h3>Tags</h3>
-        <div>
-          <div>
-            <input
-              type="checkbox"
-              name="tags"
-              value="new"
-              id="new"
-            /><label for="new">New</label>
-          </div>
-        </div>
-        <div>
-          <div>
-            <input
-              type="checkbox"
-              name="tags"
-              value="on-sale"
-              id="on-sale"
-            /><label for="on-sale">On sale</label>
-          </div>
-        </div>
-        <div>
-          <div>
-            <input
-              type="checkbox"
-              name="tags"
-              value="best-seller"
-              id="best-seller"
-            /><label for="best-seller">Best seller</label>
-          </div>
-        </div>
-        <div>
-          <div>
-            <input
-              type="checkbox"
-              name="tags"
-              value="most-love"
-              id="most-love"
-            /><label for="most-love">Most love</label>
-          </div>
-        </div>
-        <h3>Availability</h3>
-        <div>
-          <div>
-            <input
-              type="checkbox"
-              name="availability"
-              value="in-stock"
-              id="in-stock"
-            /><label for="in-stock">In stock</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              name="availability"
-              value="almost-out"
-              id="almost-out"
-            /><label for="almost-out">Almost out</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              name="availability"
-              value="out-of-stock"
-              id="out-of-stock"
-            /><label for="out-of-stock">Out of stock</label>
-          </div>
-        </div>
-      </aside>
+      </container>
       <main>
-        <section>
-          <h2>Products</h2>
-          <div class="products drinks in-stock">
-            <img class="imagesfilter" id="images" src="pictures/agano.png">
-            <h3>Agano</h3>
-            <p>Drinks | In stock</p>
+        <div class="container-2">
+          <div class="row">
+            <div class="products drinks in-stock col-lg-4 card">
+              <img class="imagesfilter" id="images" src="pictures/agano.png" />
+              <div class="card-body">
+                <h3 class="name-products card-text">Agano</h3>
+                <p class="description card-text">Drinks | In stock</p>
+              </div>
+            </div>
+            <div class="products frozen in-stock col-lg-4 card">
+              <img
+                class="imagesfilter"
+                id="images"
+                src="https://zippgrocery.com/wp-content/uploads/2020/06/NINA-Frozen-Attieke.png"
+              />
+              <div class="card-body">
+                <h3 class="name-products card-text">Atieke frozen</h3>
+                <p class="description card-text">Frozen | In stock</p>
+              </div>
+            </div>
+            <div class="products frozen in-stock col-lg-4 card">
+              <img
+                class="imagesfilter"
+                id="images"
+                src="https://i5.walmartimages.com/asr/1a6e2ad6-7866-422d-81bc-52ad39a13a91.c632c773df47dbeb5298906738093cf4.jpeg"
+              />
+              <div class="card-body">
+                <h3 class="name-products card-text">Banku mix cooled</h3>
+                <p class="description card-text">Frozen | In stock</p>
+              </div>
+            </div>
+            <div class="products frozen spices almost-out col-lg-4 card">
+              <img
+                class="imagesfilter"
+                id="images"
+                src="https://vinleaf.com/wp-content/uploads/2019/03/frozen-cassava-leaves-20190325.jpg"
+              />
+              <div class="card-body"></div>
+              <h3 class="name-products card-text">Cassava leaves frozen 1 pcs</h3>
+              <p class="description card-text">Frozen | Spices | Almost out</p>
+            </div>
+            <div class="products oils most-love col-lg-4 card">
+              <img
+                class="imagesfilter"
+                id="images"
+                src="https://dl.airtable.com/.attachmentThumbnails/7b8a8dbaf8e0437fa1601f5cf7c35390/851605cc"
+              />
+              <div class="card-body"></div>
+              <h3 class="name-products card-text">Palm Oil 0.5 L</h3>
+              <p class="description card-text">Oils | Most Love</p>
+            </div>
+            <div class="products oils most-love col-lg-4 card">
+              <img
+                class="imagesfilter"
+                id="images"
+                src="https://dl.airtable.com/.attachmentThumbnails/7d13a7d5eddae7d864e28753ac27713f/13b05de2"
+              />
+              <div class="card-body"></div>
+              <h3 class="name-products card-text">Palm Oil 1 L</h3>
+              <p class="description card-text">Oils | Most Love</p>
+            </div>
+            <div class="products oils best-seller col-lg-4 card">
+              <img
+                class="imagesfilter"
+                id="images"
+                src="https://dl.airtable.com/.attachmentThumbnails/ca5a4bf0f4bc22fcb5aad2c60cc651fd/1f2444ee"
+              />
+              <div class="card-body"></div>
+              <h3 class="name-products card-text">Palm Oil 3 L</h3>
+              <p class="description card-text">Oils | best-seller</p>
+            </div>
+            <div class="products oils out-of-stock col-lg-4 card">
+              <img
+                class="imagesfilter"
+                id="images"
+                src="https://dl.airtable.com/.attachmentThumbnails/c28ff255428493aeed4d69df8ed726c4/988418cb"
+              />
+              <div class="card-body">
+                <h3 class="name-products card-text">Palm Oil 4.5 L</h3>
+                <p class="description card-text">Oils | Out of stock</p>
+              </div>
+            </div>
+            <div class="products oils out-of-stock col-lg-4 card">
+              <img
+                class="imagesfilter"
+                id="images"
+                src="https://dl.airtable.com/.attachmentThumbnails/58e669a833bf71176bb472bc9bb2ce8b/3a9558aa"
+              />
+              <div class="card-body">
+                <h3 class="name-products card-text">Palm Oil 5 L</h3>
+                <p class="description card-text">Oils | Out of stock</p>
+              </div>
+            </div>
+            <div class="products oils new on-sale col-lg-4 card">
+              <img
+                class="imagesfilter"
+                id="images"
+                src="https://rukminim1.flixcart.com/image/416/416/khf63680/soap/c/b/e/1-150-100-pure-shea-butter-raw-unrefined-150gm-great-for-face-original-imafxfuhkcqfq3b5.jpeg?q=70"
+              />
+              <div class="card-body">
+                <h3 class="name-products card-text">Shea Butter 300 g</h3>
+                <p class="description card-text">Oils | New | On sale</p>
+              </div>
+            </div>
           </div>
-          <div class="products frozen in-stock">
-            <img class="imagesfilter" id="images" src="https://zippgrocery.com/wp-content/uploads/2020/06/NINA-Frozen-Attieke.png">
-            <h3>Atieke frozen</h3>
-            <p>Frozen | In stock</p>
-          </div>
-          <div class="products frozen in-stock">
-            <img class="imagesfilter" id="images" src="https://i5.walmartimages.com/asr/1a6e2ad6-7866-422d-81bc-52ad39a13a91.c632c773df47dbeb5298906738093cf4.jpeg">
-            <h3>Banku mix cooled</h3>
-            <p>Frozen | In stock</p>
-          </div>
-          <div class="products frozen spices almost-out">
-            <img class="imagesfilter" id="images" src="https://vinleaf.com/wp-content/uploads/2019/03/frozen-cassava-leaves-20190325.jpg">
-            <h3>Cassava leaves frozen 1 pcs</h3>
-            <p>Frozen | Spices | Almost out</p>
-          </div>
-          <div class="products oils most-love">
-            <img class="imagesfilter" id="images" src="https://dl.airtable.com/.attachmentThumbnails/7b8a8dbaf8e0437fa1601f5cf7c35390/851605cc">
-            <h3>Palm Oil 0.5 L</h3>
-            <p>Oils | Most Love</p>
-          </div>
-          <div class="products oils most-love">
-            <img class="imagesfilter" id="images" src="https://dl.airtable.com/.attachmentThumbnails/7d13a7d5eddae7d864e28753ac27713f/13b05de2">
-            <h3>Palm Oil 1 L</h3>
-            <p>Oils | Most Love</p>
-          </div>
-          <div class="products oils best-seller">
-            <img class="imagesfilter" id="images" src="https://dl.airtable.com/.attachmentThumbnails/ca5a4bf0f4bc22fcb5aad2c60cc651fd/1f2444ee">
-            <h3>Palm Oil 3 L</h3>
-            <p>Oils | best-seller</p>
-          </div>
-          <div class="products oils out-of-stock">
-            <img class="imagesfilter" id="images" src="https://dl.airtable.com/.attachmentThumbnails/c28ff255428493aeed4d69df8ed726c4/988418cb">
-            <h3>Palm Oil 4.5 L</h3>
-            <p>Oils | Out of stock</p>
-          </div>
-          <div class="products oils out-of-stock">
-            <img class="imagesfilter" id="images" src="https://dl.airtable.com/.attachmentThumbnails/58e669a833bf71176bb472bc9bb2ce8b/3a9558aa">
-            <h3>Palm Oil 5 L</h3>
-            <p>Oils | Out of stock</p>
-          </div>
-          <div class="products oils new on-sale">
-            <img class="imagesfilter" id="images" src="https://rukminim1.flixcart.com/image/416/416/khf63680/soap/c/b/e/1-150-100-pure-shea-butter-raw-unrefined-150gm-great-for-face-original-imafxfuhkcqfq3b5.jpeg?q=70">
-            <h3>Shea Butter 300 g</h3>
-            <p>Oils | New | On sale</p>
-          </div>
-        </section>
+        </div>
       </main>
     </div>
     <script type="text/javascript" src="checkbox.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
