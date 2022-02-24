@@ -1,15 +1,19 @@
-//evento = cajita seleccionada
 // not exactly vanilla as there is one lodash function
-const allCheckboxes = document.querySelectorAll("input[type=checkbox]");
-//console.log(allCheckboxes); // lista todas las cajitas o checkboxes listadas sin titulo
-const allProducts = Array.from(document.querySelectorAll(".products"));
-//console.log("************************", allProducts); // lista la clase de los productos
+var allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+console.log(allCheckboxes);
+var allProducts = Array.from(document.querySelectorAll('.products'));
+console.log("this is the array", allProducts);
 const checked = {
   "categories":[],
   "tags":[],
   "availability":[]
 };
+items = $(allProducts);
+numItems = items.length;
+perPage = 3;
+productsFiltered = [];
 
+items.slice(perPage).hide();
 
 
 Array.prototype.forEach.call(allCheckboxes, function (el) {
@@ -17,11 +21,14 @@ Array.prototype.forEach.call(allCheckboxes, function (el) {
 }); 
 
 function toggleCheckbox(e) {
-  const productsFiltered = [...allProducts].filter(p => p?.className.includes(e.target.value));
+  productsFiltered = [...allProducts].filter(p => p?.className.includes(e.target.value));
+  items = $(productsFiltered);
+  numItems = items.length;
+  console.log(numItems);
 
  getChecked(e.target.name);
  // se pasa el titulo de la cajita seleccionada y retorna el nombre del evento (frozen, drinks..)
-  setVisibility(productsFiltered);
+  setVisibility();
 }
 
 function getChecked(name) {
@@ -32,21 +39,33 @@ function getChecked(name) {
   });
 }
 
-
-function setVisibility(filteredProducts) {
-
-  filteredProducts.map(el => {
-    //console.log("checked antes", checked);
-    var categories = checked.categories.length? _.intersection(Array.from(el.classList), checked.categories).length : true;
-    var tags = checked.tags.length? _.intersection(Array.from(el.classList), checked.tags).length : true;
+function setVisibility() {
+  allProducts.map(function (el) {
+    var categories = checked.categories.length ? _.intersection(Array.from(el.classList), checked.categories).length : true;
+    var tags = checked.tags.length ? _.intersection(Array.from(el.classList), checked.tags).length : true;
     var availability = checked.availability.length ? _.intersection(Array.from(el.classList), checked.availability).length : true;
     if (categories && tags && availability) {
-     // el.style.display = "block";
-     el.style.display = "none";
-      console.log("el event", el);
+      el.style.display = 'block';
     } else {
-
+      el.style.display = 'none';
     }
-    return el;
+    paginate(1);
   });
+}
+
+$("#pagination-container").pagination({
+  items: numItems,
+  itemsOnPage: perPage,
+  prevText: "Next",
+  nextText: "Previous>",
+  onPageClick: pageNumber => paginate(pageNumber),
+});
+
+const paginate = pageNumber => {
+  //console.log("entro a la funcion pagination", pageNumber);
+  var showFrom = perPage * (pageNumber - 1);
+  //console.log("showFrom", showFrom);
+  var showTo = showFrom + perPage;
+  console.log("showTo", showTo);
+  items.hide().slice(showFrom, showTo).show();
 }
