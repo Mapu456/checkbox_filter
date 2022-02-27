@@ -60,13 +60,6 @@ function setVisibility() {
       el.style.display = 'none';
     }
 
-    $("#pagination-container").pagination({
-      items: numItems,
-      itemsOnPage: perPage,
-      prevText: "Next",
-      nextText: "Previous>",
-      onPageClick: pageNumber => paginate(pageNumber),
-    });
     console.log("va a entrar a paginate 1")
     paginate(1);
   });
